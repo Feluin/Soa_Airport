@@ -1,11 +1,9 @@
 package airport;
-import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aircraft{
+public class Aircraft implements IAircraft {
     private int id;
     private String manufacturer;
     private int numberOfSeatFirstClass;
@@ -13,7 +11,33 @@ public class Aircraft{
     private int numberOfSeatEconomyClass;
     private List<Seat> seats = new ArrayList<>();
     private List<Wing> wing = new ArrayList<>();
+    private List<Crew> crew;
 
+
+    public Aircraft() {
+
+    }
+
+
+    @Override
+    public void taxi() {
+
+    }
+
+    @Override
+    public void holdShort() {
+
+    }
+
+    @Override
+    public void takeOff() {
+
+    }
+
+    @Override
+    public void land() {
+
+    }
     public void build() {
         System.out.println("---Airplane.build");
         id = 0;
@@ -32,6 +56,15 @@ public class Aircraft{
         }
         wing.add(new Wing(WingPosition.Left,new Flap(0)));
         wing.add(new Wing(WingPosition.Right, new Flap(0)));
+        Pilot pilot = new Pilot(new Employee("Peter Mayer"), 500);
+        FlightAttendant flightAttendant1 = new FlightAttendant(new Employee("Klara Mayer"), true);
+        FlightAttendant flightAttendant2 = new FlightAttendant(new Employee("Kirsten Plob"), false);
+        FlightAttendant flightAttendant3 = new FlightAttendant(new Employee("Hans Gustaff"), false);
+
+        crew.add(pilot);
+        crew.add(flightAttendant1);
+        crew.add(flightAttendant2);
+        crew.add(flightAttendant3);
     }
 
 }
