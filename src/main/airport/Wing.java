@@ -4,10 +4,12 @@ public class Wing
 {
     private WingPosition wingPosition;
     private Flap flap;
+    private Fan fan;
 
-    public Wing(WingPosition wingPosition, Flap flap) {
+    public Wing(WingPosition wingPosition, Flap flap, Fan fan) {
         this.wingPosition = wingPosition;
         this.flap = flap;
+        this.fan = fan;
     }
 
     public void setWingPosition(WingPosition wingPosition) {

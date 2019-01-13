@@ -6,11 +6,9 @@ import java.util.List;
 public class Fan implements IFan {
     private List<Blade> blades = new ArrayList<>();
     private int rpm;
-    private boolean isStart = true;
+    private boolean isStart = false;
 
-    public Fan(int rpm, boolean isStart, BladeMaterial bladeMaterial) {
-        this.rpm = rpm;
-        this.isStart = isStart;
+    public Fan(BladeMaterial bladeMaterial) {
         for(int i = 0; i<96;i++) {
             blades.add(new Blade(i, bladeMaterial));
         }

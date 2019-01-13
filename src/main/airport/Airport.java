@@ -5,10 +5,7 @@ import java.util.*;
 public class Airport
 {
     private String name;
-<<<<<<< HEAD
+    private List<Gate.GateNames> gates=new ArrayList<>(Arrays.asList(Gate.GateNames.values()));
+    private Map<Gate,Aircraft> gateairportmap=new HashMap<>();
 
-=======
-    List<Gate.GateNames> gates=new ArrayList<>(Arrays.asList(Gate.GateNames.values()));
-    Map<Gate,Aircraft> gateairportmap=new HashMap<>();
->>>>>>> remotes/origin/master
 }
