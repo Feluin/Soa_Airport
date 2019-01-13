@@ -1,10 +1,5 @@
 package airport;
 
-public class FlightAttendant extends Crew{
+public class FlightAttendant {
     private boolean isPurser;
-
-    public FlightAttendant(Employee employee, boolean isPurser) {
-        super(employee);
-        this.isPurser = isPurser;
-    }
 }
