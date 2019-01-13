@@ -3,6 +3,7 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Aircraft{
     private int id;
@@ -10,19 +11,13 @@ public class Aircraft{
     private int numberOfSeatFirstClass;
     private int numberOfSeatBusinessClass;
     private int numberOfSeatEconomyClass;
-    private ArrayList<Seat> seats;
-    private ArrayList<Wing> wing;
+    private List<Seat> seats = new ArrayList<>();
+    private List<Wing> wing = new ArrayList<>();
     private EventBus eventBus;
 
 
-    public Aircraft(int id, String manufacturer, int numberOfSeatFirstClass, int numberOfSeatBusinessClass, int numberOfSeatEconomyClass, ArrayList<Seat> seats, ArrayList<Wing> wing) {
-        this.id = id;
-        this.manufacturer = manufacturer;
-        this.numberOfSeatFirstClass = numberOfSeatFirstClass;
-        this.numberOfSeatBusinessClass = numberOfSeatBusinessClass;
-        this.numberOfSeatEconomyClass = numberOfSeatEconomyClass;
-        this.seats = seats;
-        this.wing = wing;
+    public Aircraft() {
+
         this.eventBus = new EventBus("EB-A380");
     }
 
@@ -32,6 +27,26 @@ public class Aircraft{
 
     public void removeSubscriber(Subscribe subscriber) {
         eventBus.unregister(subscriber);
+    }
+
+    public void build() {
+        System.out.println("---Airplane.build");
+        id = 0;
+        manufacturer = "EB-A380";
+        numberOfSeatFirstClass = 60;
+        numberOfSeatBusinessClass = 100;
+        numberOfSeatEconomyClass = 408;
+        for(int i = 0; i<60;i++) {
+            seats.add(new Seat(Bookingclass.First,i));
+        }
+        for(int i = 0; i<100;i++) {
+            seats.add(new Seat(Bookingclass.Business,i));
+        }
+        for(int i = 0;i<408;i++) {
+            seats.add(new Seat(Bookingclass.Economy, i));
+        }
+        wing.add(new Wing(WingPosition.Left,new Flap(0)));
+        wing.add(new Wing(WingPosition.Right, new Flap(0)));
     }
 
 }
