@@ -11,7 +11,7 @@ public class Aircraft implements IAircraft {
     private int numberOfSeatEconomyClass;
     private List<Seat> seats = new ArrayList<>();
     private List<Wing> wing = new ArrayList<>();
-    private List<Crew> crew;
+    private List<Crew> crew = new ArrayList<>();
 
 
     public Aircraft() {
@@ -54,8 +54,8 @@ public class Aircraft implements IAircraft {
         for(int i = 0;i<408;i++) {
             seats.add(new Seat(Bookingclass.Economy, i));
         }
-        wing.add(new Wing(WingPosition.Left,new Flap(0)));
-        wing.add(new Wing(WingPosition.Right, new Flap(0)));
+        wing.add(new Wing(WingPosition.Left,new Flap(0), new Fan(BladeMaterial.Titan)));
+        wing.add(new Wing(WingPosition.Right, new Flap(0), new Fan(BladeMaterial.Titan)));
         Pilot pilot = new Pilot(new Employee("Peter Mayer"), 500);
         FlightAttendant flightAttendant1 = new FlightAttendant(new Employee("Klara Mayer"), true);
         FlightAttendant flightAttendant2 = new FlightAttendant(new Employee("Kirsten Plob"), false);
