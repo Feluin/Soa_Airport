@@ -3,8 +3,9 @@ package airport;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
-public class ApronControl {
+public class Tower {
     private EventBus eventBus;
+
     public void addSubscriber(Subscribe subscriber) {
         eventBus.register(subscriber);
     }
