@@ -13,21 +13,6 @@ public class Aircraft{
     private int numberOfSeatEconomyClass;
     private List<Seat> seats = new ArrayList<>();
     private List<Wing> wing = new ArrayList<>();
-    private EventBus eventBus;
-
-
-    public Aircraft() {
-
-        this.eventBus = new EventBus("EB-A380");
-    }
-
-    public void addSubscriber(Subscribe subscriber) {
-        eventBus.register(subscriber);
-    }
-
-    public void removeSubscriber(Subscribe subscriber) {
-        eventBus.unregister(subscriber);
-    }
 
     public void build() {
         System.out.println("---Airplane.build");
