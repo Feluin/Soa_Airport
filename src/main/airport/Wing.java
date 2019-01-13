@@ -2,5 +2,6 @@ package airport;
 
 public class Wing
 {
-    private Wingposition
+    private WingPosition wingPosition;
+    private Flap flap;
 }
