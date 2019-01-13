@@ -1,4 +1,9 @@
 package airport;
 
-public class Crew {
+public abstract class Crew {
+    private Employee employee;
+
+    public Crew(Employee employee) {
+        this.employee = employee;
+    }
 }
