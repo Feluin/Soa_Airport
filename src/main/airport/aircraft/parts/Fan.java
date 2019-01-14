@@ -1,9 +1,14 @@
-package airport;
+package airport.aircraft.parts;
+
+import airport.aircraft.parts.Blade;
+import airport.aircraft.parts.BladeMaterial;
+import airport.aircraft.parts.IFan;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fan implements IFan {
+public class Fan implements IFan
+{
     private List<Blade> blades = new ArrayList<>();
     private int rpm;
     private boolean isStart = false;

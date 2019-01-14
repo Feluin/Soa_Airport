@@ -1,4 +1,4 @@
-package airport;
+package airport.aircraft.parts;
 
 public interface IFan {
     void increaseRPM(int value);

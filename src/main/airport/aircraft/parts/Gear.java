@@ -1,8 +1,11 @@
-package airport;
+package airport.aircraft.parts;
+
+import airport.Wheel;
 
 import java.util.ArrayList;
 
-public class Gear implements IGear {
+public class Gear implements IGear
+{
     private GearType gearType;
     private boolean isDown =false;
     private boolean isBrakeSet =false;

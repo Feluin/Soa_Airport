@@ -1,4 +1,6 @@
-package airport;
+package airport.aircraft.parts;
+
+import airport.Bookingclass;
 
 public class Seat
 {

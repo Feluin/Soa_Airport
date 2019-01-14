@@ -1,4 +1,4 @@
-package airport;
+package airport.aircraft;
 
 public interface IAircraft {
     void taxi();

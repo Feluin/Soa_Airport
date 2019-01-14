@@ -1,9 +1,22 @@
-package airport;
+package airport.aircraft;
+
+import airport.Bookingclass;
+import airport.Crew;
+import airport.Employee;
+import airport.aircraft.parts.Fan;
+import airport.aircraft.parts.Flap;
+import airport.FlightAttendant;
+import airport.Pilot;
+import airport.aircraft.parts.BladeMaterial;
+import airport.aircraft.parts.Seat;
+import airport.aircraft.parts.Wing;
+import airport.aircraft.parts.WingPosition;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aircraft implements IAircraft {
+public class Aircraft implements IAircraft
+{
     private int id;
     private String manufacturer;
     private int numberOfSeatFirstClass;

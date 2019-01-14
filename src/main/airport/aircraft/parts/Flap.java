@@ -1,6 +1,9 @@
-package airport;
+package airport.aircraft.parts;
 
-public class Flap implements IFlap{
+import airport.aircraft.parts.IFlap;
+
+public class Flap implements IFlap
+{
     private int id;
     private int degree;
 

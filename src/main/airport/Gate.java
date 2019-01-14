@@ -1,5 +1,7 @@
 package airport;
 
+import airport.aircraft.Aircraft;
+
 public class Gate {
     private boolean isOpen;
 
