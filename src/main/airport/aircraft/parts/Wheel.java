@@ -1,4 +1,4 @@
-package airport;
+package airport.aircraft.parts;
 
 public class Wheel {
     private int id;

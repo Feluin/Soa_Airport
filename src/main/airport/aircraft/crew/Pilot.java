@@ -1,6 +1,9 @@
-package airport;
+package airport.aircraft.crew;
 
-public class Pilot extends Crew{
+import airport.aircraft.crew.Crew;
+import airport.aircraft.crew.Employee;
+
+public class Pilot extends Crew {
     private int flightExperienceInMiles;
 
     public Pilot(Employee employee, int flightExperienceInMiles) {
