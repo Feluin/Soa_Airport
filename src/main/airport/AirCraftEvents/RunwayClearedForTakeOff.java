@@ -1,6 +1,6 @@
 package airport.AirCraftEvents;
 
-import airport.RunwayDirection;
+import airport.airport.RunwayDirection;
 import airport.aircraft.Aircraft;
 
 public class RunwayClearedForTakeOff extends AircraftEvent
