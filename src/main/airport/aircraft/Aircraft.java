@@ -1,12 +1,12 @@
 package airport.aircraft;
 
 import airport.Bookingclass;
-import airport.Crew;
-import airport.Employee;
+import airport.aircraft.crew.Crew;
+import airport.aircraft.crew.Employee;
 import airport.aircraft.parts.Fan;
 import airport.aircraft.parts.Flap;
-import airport.FlightAttendant;
-import airport.Pilot;
+import airport.aircraft.crew.FlightAttendant;
+import airport.aircraft.crew.Pilot;
 import airport.aircraft.parts.BladeMaterial;
 import airport.aircraft.parts.Seat;
 import airport.aircraft.parts.Wing;

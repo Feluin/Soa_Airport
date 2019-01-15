@@ -1,7 +1,5 @@
 package airport.aircraft.parts;
 
-import airport.Wheel;
-
 import java.util.ArrayList;
 
 public class Gear implements IGear

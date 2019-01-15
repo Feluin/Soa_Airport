@@ -1,4 +1,4 @@
-package airport;
+package airport.airport;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
