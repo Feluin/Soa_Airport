@@ -78,6 +78,7 @@ public class Aircraft implements IAircraft
         crew.add(flightAttendant1);
         crew.add(flightAttendant2);
         crew.add(flightAttendant3);
+        System.out.println("---Airplane has been builed!");
     }
 
 }
