@@ -1,4 +1,4 @@
-package airport;
+package airport.airport;
 
 import airport.AirCraftEvents.HoldShortEvent;
 import airport.aircraft.Aircraft;
