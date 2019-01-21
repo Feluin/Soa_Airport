@@ -28,7 +28,7 @@ public class Aircraft implements IAircraft
 
 
     public Aircraft() {
-
+build();
     }
 
 
