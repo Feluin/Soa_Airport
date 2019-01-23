@@ -1,7 +1,7 @@
 package airport.airport;
 
 import airport.AirCraftEvents.HoldShortEvent;
-import airport.AirCraftEvents.RunwayClearedToLand;
+import airport.AirCraftEvents.RunwayClearedToLandEvent;
 import airport.aircraft.Aircraft;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
@@ -28,7 +28,7 @@ public class Tower {
     }
 
     public void runwayclearedtoLand(Aircraft aircraft, RunwayDirection runwayDirection) {
-        eventBus.post(new RunwayClearedToLand(aircraft, runwayDirection));
+        eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
     }
 
 }

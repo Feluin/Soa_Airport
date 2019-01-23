@@ -1,6 +1,6 @@
 package airport.airport;
 
-import airport.AirCraftEvents.RunwayClearedToLand;
+import airport.AirCraftEvents.RunwayClearedToLandEvent;
 import airport.AirCraftEvents.TaxiEvent;
 import airport.aircraft.Aircraft;
 import com.google.common.eventbus.EventBus;
@@ -29,6 +29,6 @@ public class ApronControl {
     }
 
     public void runwayClearedToTakeoff(Aircraft aircraft,RunwayDirection runwayDirection){
-        eventBus.post(new RunwayClearedToLand(aircraft,runwayDirection));
+        eventBus.post(new RunwayClearedToLandEvent(aircraft,runwayDirection));
     }
 }

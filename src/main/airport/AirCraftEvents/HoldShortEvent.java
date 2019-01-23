@@ -6,10 +6,17 @@ import airport.airport.Location;
 
 public class HoldShortEvent extends AircraftEvent
 {
+    private final Location location;
+
     public HoldShortEvent(final Aircraft aircraft,
-        final Location controlStation)
+                          final Location controlStation)
     {
 
         super(aircraft);
+        this.location=controlStation;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 }

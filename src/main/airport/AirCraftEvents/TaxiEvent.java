@@ -7,13 +7,33 @@ import java.util.List;
 
 public class TaxiEvent extends AircraftEvent
 {
-    //das mit objekten ist scheisse
+
+    private Location startpoint;
+    private List<Location> junktionList;
+    private Location endpoint;
+
     public TaxiEvent(Aircraft aircraft,
-        Location startpoint,
-        List<Location> junktionList,
-        Location endpoint)
+                     Location startpoint,
+                     List<Location> junktionList,
+                     Location endpoint)
     {
         super(aircraft);
 
+
+        this.startpoint = startpoint;
+        this.junktionList = junktionList;
+        this.endpoint = endpoint;
+    }
+
+    public List<Location> getJunktionList() {
+        return junktionList;
+    }
+
+    public Location getStartpoint() {
+        return startpoint;
+    }
+
+    public Location getEndpoint() {
+        return endpoint;
     }
 }

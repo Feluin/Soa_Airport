@@ -1,5 +1,9 @@
 package airport.aircraft;
 
+import airport.AirCraftEvents.HoldShortEvent;
+import airport.AirCraftEvents.RunwayClearedForTakeOffEvent;
+import airport.AirCraftEvents.RunwayClearedToLandEvent;
+import airport.AirCraftEvents.TaxiEvent;
 import airport.Bookingclass;
 import airport.aircraft.crew.Crew;
 import airport.aircraft.crew.Employee;
@@ -11,46 +15,28 @@ import airport.aircraft.parts.BladeMaterial;
 import airport.aircraft.parts.Seat;
 import airport.aircraft.parts.Wing;
 import airport.aircraft.parts.WingPosition;
+import airport.airport.Location;
+import com.google.common.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aircraft implements IAircraft
-{
+public class Aircraft implements IAircraft {
     private int id;
     private String manufacturer;
     private int numberOfSeatFirstClass;
     private int numberOfSeatBusinessClass;
     private int numberOfSeatEconomyClass;
+    private Location currentLocation;
     private List<Seat> seats = new ArrayList<>();
     private List<Wing> wing = new ArrayList<>();
     private List<Crew> crew = new ArrayList<>();
 
 
     public Aircraft() {
-build();
+        build();
     }
 
-
-    @Override
-    public void taxi() {
-
-    }
-
-    @Override
-    public void holdShort() {
-
-    }
-
-    @Override
-    public void takeOff() {
-
-    }
-
-    @Override
-    public void land() {
-
-    }
     public void build() {
         System.out.println("---Airplane.build");
         id = 0;
@@ -58,16 +44,16 @@ build();
         numberOfSeatFirstClass = 60;
         numberOfSeatBusinessClass = 100;
         numberOfSeatEconomyClass = 408;
-        for(int i = 0; i<60;i++) {
-            seats.add(new Seat(Bookingclass.First,i));
+        for (int i = 0; i < 60; i++) {
+            seats.add(new Seat(Bookingclass.First, i));
         }
-        for(int i = 0; i<100;i++) {
-            seats.add(new Seat(Bookingclass.Business,i));
+        for (int i = 0; i < 100; i++) {
+            seats.add(new Seat(Bookingclass.Business, i));
         }
-        for(int i = 0;i<408;i++) {
+        for (int i = 0; i < 408; i++) {
             seats.add(new Seat(Bookingclass.Economy, i));
         }
-        wing.add(new Wing(WingPosition.Left,new Flap(0), new Fan(BladeMaterial.Titan)));
+        wing.add(new Wing(WingPosition.Left, new Flap(0), new Fan(BladeMaterial.Titan)));
         wing.add(new Wing(WingPosition.Right, new Flap(0), new Fan(BladeMaterial.Titan)));
         Pilot pilot = new Pilot(new Employee("Peter Mayer"), 500);
         FlightAttendant flightAttendant1 = new FlightAttendant(new Employee("Klara Mayer"), true);
@@ -81,4 +67,35 @@ build();
         System.out.println("---Airplane has been builed!");
     }
 
+    @Override
+    @Subscribe
+    public void taxi(TaxiEvent taxiEvent) {
+        if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint())) {
+            //TODO
+        }
+    }
+
+    @Override
+    @Subscribe
+    public void holdShort(HoldShortEvent holdShortEvent) {
+        if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation())) {
+//TODO
+        }
+    }
+
+    @Override
+    @Subscribe
+    public void takeOff(RunwayClearedForTakeOffEvent runwayClearedForTakeOffEventEvent) {
+        if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft())) {
+//TODO
+        }
+    }
+
+    @Override
+    @Subscribe
+    public void land(RunwayClearedToLandEvent runwayClearedToLandEvent) {
+        if (this.equals(runwayClearedToLandEvent.getAircraft())) {
+//TODO
+        }
+    }
 }

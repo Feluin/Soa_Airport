@@ -6,7 +6,7 @@ public class AircraftEvent implements IAirCraftEvent
 {
     private Aircraft aircraft;
 
-    public AircraftEvent(Aircraft aircraft)
+    AircraftEvent(Aircraft aircraft)
     {
         this.aircraft = aircraft;
     }
