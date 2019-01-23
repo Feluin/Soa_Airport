@@ -2,14 +2,28 @@ package airport.airport;
 
 import airport.aircraft.Aircraft;
 
-public class Gate extends Location
-{
+public class Gate extends Location {
     private boolean isOpen;
 
     private Aircraft aircraft;
 
-    public enum GateNames
-    {
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
+    }
+
+    public Aircraft getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
+
+    public enum GateNames{
         A01,
         A02,
         A03,

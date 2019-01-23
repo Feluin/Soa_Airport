@@ -32,6 +32,12 @@ public class Airport
     {
         tower = new Tower("BER Tower");
         this.apronControl = new ApronControl("BER ApronControl");
+
+        createLocations();
+    }
+
+    private void createLocations() {
+
     }
 
     public Airport getInstance()

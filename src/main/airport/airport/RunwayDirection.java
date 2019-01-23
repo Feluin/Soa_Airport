@@ -1,5 +1,7 @@
 package airport.airport;
 
-public class RunwayDirection
-{
+import airport.aircraft.Aircraft;
+
+public class RunwayDirection extends Location{
+
 }
