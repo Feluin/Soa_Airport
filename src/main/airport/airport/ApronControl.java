@@ -28,7 +28,5 @@ public class ApronControl {
         eventBus.post(new TaxiEvent(aircraft,start,junktions,end));
     }
 
-    public void runwayClearedToTakeoff(Aircraft aircraft,RunwayDirection runwayDirection){
-        eventBus.post(new RunwayClearedToLandEvent(aircraft,runwayDirection));
-    }
+
 }

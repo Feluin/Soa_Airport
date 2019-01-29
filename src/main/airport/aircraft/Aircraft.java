@@ -16,6 +16,7 @@ import airport.aircraft.parts.Seat;
 import airport.aircraft.parts.Wing;
 import airport.aircraft.parts.WingPosition;
 import airport.airport.Location;
+import airport.database.FlightRecorder;
 import com.google.common.eventbus.Subscribe;
 
 import java.util.ArrayList;
@@ -71,6 +72,7 @@ public class Aircraft implements IAircraft {
     @Subscribe
     public void taxi(TaxiEvent taxiEvent) {
         if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint())) {
+            FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
             //TODO
         }
     }
@@ -79,6 +81,8 @@ public class Aircraft implements IAircraft {
     @Subscribe
     public void holdShort(HoldShortEvent holdShortEvent) {
         if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation())) {
+            FlightRecorder.instance.insert(id, "receive: " + holdShortEvent);
+
 //TODO
         }
     }
@@ -87,6 +91,8 @@ public class Aircraft implements IAircraft {
     @Subscribe
     public void takeOff(RunwayClearedForTakeOffEvent runwayClearedForTakeOffEventEvent) {
         if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft())) {
+            FlightRecorder.instance.insert(id, "receive: " + runwayClearedForTakeOffEventEvent);
+
 //TODO
         }
     }
@@ -95,7 +101,12 @@ public class Aircraft implements IAircraft {
     @Subscribe
     public void land(RunwayClearedToLandEvent runwayClearedToLandEvent) {
         if (this.equals(runwayClearedToLandEvent.getAircraft())) {
+            FlightRecorder.instance.insert(id, "receive: " + runwayClearedToLandEvent);
+
 //TODO
         }
     }
+
+
+
 }

@@ -1,11 +1,8 @@
 package airport.database;
 
-import java.sql.Connection;
-    import java.sql.DriverManager;
-    import java.sql.SQLException;
-    import java.sql.Statement;
+import java.sql.*;
 
- public enum FlightRecorder {
+public enum FlightRecorder {
         instance;
 
         private Connection connection;
@@ -56,26 +53,30 @@ import java.sql.Connection;
            StringBuilder sqlStringBuilder = new StringBuilder();
            sqlStringBuilder.append("CREATE TABLE data ").append(" ( ");
           sqlStringBuilder.append("id BIGINT NOT NULL").append(",");
-          sqlStringBuilder.append("className VARCHAR(20) NOT NULL").append(",");
-           sqlStringBuilder.append("message VARCHAR(50) NOT NULL").append(",");
+          sqlStringBuilder.append("aircarft_id").append(", ");
+          sqlStringBuilder.append("unix_timestamp").append(", ");
+          sqlStringBuilder.append("event_message");
           sqlStringBuilder.append("PRIMARY KEY (id)");
            sqlStringBuilder.append(" )");
            update(sqlStringBuilder.toString());
       }
 
-       public String buildSQLStatement(long id, String className, String message) {
+       public String buildSQLStatement(long id, int aircraft_id, long unix_timestamp, String event_message) {
            StringBuilder stringBuilder = new StringBuilder();
-           stringBuilder.append("INSERT INTO data (id,className,message) VALUES (");
+           stringBuilder.append("INSERT INTO data (id,aircraft_id,unix_timestamp, event_message) VALUES (");
           stringBuilder.append(id).append(",");
-           stringBuilder.append("'").append(className).append("'").append(",");
-           stringBuilder.append("'").append(message).append("'");
+           stringBuilder.append("'").append(aircraft_id).append("'").append(",");
+           stringBuilder.append("'").append(unix_timestamp).append("'").append(", ");
+           stringBuilder.append("'").append(event_message).append("'");
            stringBuilder.append(")");
            System.out.println(stringBuilder.toString());
            return stringBuilder.toString();
        }
 
-       public void insert(String className, String message) {
-           update(buildSQLStatement(System.nanoTime(), className, message));
+       public void insert(int aircraft_id, String event_message) {
+           long millis = System.currentTimeMillis();
+
+           update(buildSQLStatement(System.nanoTime(), aircraft_id, millis/1000, event_message));
        }
        public void shutdown() {
            try {
