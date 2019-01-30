@@ -15,7 +15,7 @@ import airport.aircraft.parts.BladeMaterial;
 import airport.aircraft.parts.Seat;
 import airport.aircraft.parts.Wing;
 import airport.aircraft.parts.WingPosition;
-import airport.airport.Location;
+import airport.airport.locations.Location;
 import airport.database.FlightRecorder;
 import com.google.common.eventbus.Subscribe;
 

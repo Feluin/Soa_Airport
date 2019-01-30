@@ -3,6 +3,8 @@ package airport.airport;
 import airport.AirCraftEvents.HoldShortEvent;
 import airport.AirCraftEvents.RunwayClearedToLandEvent;
 import airport.aircraft.Aircraft;
+import airport.airport.locations.Location;
+import airport.airport.locations.RunwayDirection;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 

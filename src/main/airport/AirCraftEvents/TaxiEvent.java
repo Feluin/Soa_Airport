@@ -1,7 +1,7 @@
 package airport.AirCraftEvents;
 
 import airport.aircraft.Aircraft;
-import airport.airport.Location;
+import airport.airport.locations.Location;
 
 import java.util.List;
 

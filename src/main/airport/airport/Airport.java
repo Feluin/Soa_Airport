@@ -1,21 +1,22 @@
 package airport.airport;
 
 import airport.aircraft.Aircraft;
+import airport.airport.locations.Gate;
 
 import java.util.*;
 
 public class Airport
 {
     private String name;
-    private List<Gate.GateNames> gates=new ArrayList<>(Arrays.asList(Gate.GateNames.values()));
-    private Map<Gate.GateNames, Aircraft> gateAirportMap=new HashMap<>();
+    private List<Gate.GateName> gates=new ArrayList<>(Arrays.asList(Gate.GateName.values()));
+    private Map<Gate.GateName, Aircraft> gateAirportMap=new HashMap<>();
 
 
-    public List<Gate.GateNames> getGates() {
+    public List<Gate.GateName> getGates() {
         return gates;
     }
 
-    public Map<Gate.GateNames, Aircraft> getGateAirportMap() {
+    public Map<Gate.GateName, Aircraft> getGateAirportMap() {
         return gateAirportMap;
     }
 

@@ -1,8 +1,7 @@
 package airport.AirCraftEvents;
 
-import airport.airport.ControlStation;
 import airport.aircraft.Aircraft;
-import airport.airport.Location;
+import airport.airport.locations.Location;
 
 public class HoldShortEvent extends AircraftEvent
 {

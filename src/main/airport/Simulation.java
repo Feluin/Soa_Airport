@@ -2,7 +2,7 @@ package airport;
 
 import airport.aircraft.Aircraft;
 import airport.airport.Airport;
-import airport.airport.Gate;
+import airport.airport.locations.Gate;
 import airport.database.FlightRecorder;
 
 public class Simulation {
@@ -35,16 +35,16 @@ public class Simulation {
         build(aircraft1, aircraft2, aircraft3, aircraft4, aircraft5, aircraft6, aircraft7, aircraft8, aircraft9, aircraft10);
         build(aircraft11, aircraft12, aircraft13, aircraft14, aircraft15, aircraft16, aircraft17, aircraft18, aircraft19, aircraft20);
 
-        airport.getGateAirportMap().put(Gate.GateNames.A01, aircraft1);
-        airport.getGateAirportMap().put(Gate.GateNames.A02, aircraft2);
-        airport.getGateAirportMap().put(Gate.GateNames.A03, aircraft3);
-        airport.getGateAirportMap().put(Gate.GateNames.A04, aircraft4);
-        airport.getGateAirportMap().put(Gate.GateNames.A05, aircraft5);
-        airport.getGateAirportMap().put(Gate.GateNames.B01, aircraft6);
-        airport.getGateAirportMap().put(Gate.GateNames.B02, aircraft7);
-        airport.getGateAirportMap().put(Gate.GateNames.B03, aircraft8);
-        airport.getGateAirportMap().put(Gate.GateNames.B04, aircraft9);
-        airport.getGateAirportMap().put(Gate.GateNames.B05, aircraft10);
+        airport.getGateAirportMap().put(Gate.GateName.A01, aircraft1);
+        airport.getGateAirportMap().put(Gate.GateName.A02, aircraft2);
+        airport.getGateAirportMap().put(Gate.GateName.A03, aircraft3);
+        airport.getGateAirportMap().put(Gate.GateName.A04, aircraft4);
+        airport.getGateAirportMap().put(Gate.GateName.A05, aircraft5);
+        airport.getGateAirportMap().put(Gate.GateName.B01, aircraft6);
+        airport.getGateAirportMap().put(Gate.GateName.B02, aircraft7);
+        airport.getGateAirportMap().put(Gate.GateName.B03, aircraft8);
+        airport.getGateAirportMap().put(Gate.GateName.B04, aircraft9);
+        airport.getGateAirportMap().put(Gate.GateName.B05, aircraft10);
 
         FlightRecorder.instance.startup();
         FlightRecorder.instance.init();
