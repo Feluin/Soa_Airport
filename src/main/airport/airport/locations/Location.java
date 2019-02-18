@@ -2,6 +2,7 @@ package airport.airport.locations;
 
 import airport.aircraft.Aircraft;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -23,13 +24,9 @@ public abstract class Location
         return possiblelocations;
     }
 
-    public static void createJunktion(Location... locations)
+    public static void createJunktion(ArrayList<Location> locations)
     {
-        for (Location location :
-            locations)
-        {
-            location.addPossibleLocations(Arrays.asList(locations));
-        }
+        locations.forEach(location -> location.addPossibleLocations(locations));
     }
 
     public Aircraft getAircraft()
