@@ -2,13 +2,14 @@ package airport.airport.locations;
 
 import airport.aircraft.Aircraft;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public abstract class Location
 {
-    private Set<Location> possiblelocations = new HashSet<>();
+    Set<Location> possiblelocations = new HashSet<>();
 
     protected Aircraft currentAircraft;
 
@@ -22,9 +23,13 @@ public abstract class Location
         return possiblelocations;
     }
 
-    public static void createJunktion(List<Location> locations)
+    public static void createJunktion(Location... locations)
     {
-        locations.forEach(location -> location.addPossibleLocations(locations));
+        for (Location location :
+            locations)
+        {
+            location.addPossibleLocations(Arrays.asList(locations));
+        }
     }
 
     public Aircraft getAircraft()
@@ -32,13 +37,32 @@ public abstract class Location
         return currentAircraft;
     }
 
-    public boolean moveAircraftToLocation(Location location)
+    public boolean isPossibleLocation(Location location)
     {
-        if (possiblelocations.contains(location))
+        return possiblelocations.contains(location);
+    }
+
+    public Aircraft getCurrentAircraft()
+    {
+        return currentAircraft;
+    }
+
+    public void setAircraft(final Aircraft aircraft)
+    {
+        if (aircraft == null)
         {
-            location.currentAircraft = this.currentAircraft;
-            return true;
+            currentAircraft = aircraft;
         }
-        return false;
+    }
+
+    public void removeAircraft(final Aircraft aircraft)
+    {
+        if (currentAircraft.equals(aircraft))
+        {
+            currentAircraft = null;
+        } else
+        {
+            //TODO da war was falsch
+        }
     }
 }
