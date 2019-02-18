@@ -6,10 +6,12 @@ import java.util.Arrays;
 
 public class ControlPoint extends Location
 {
+    private ControlPointNames name;
     private Point[] includePoints;
 
-    public ControlPoint(final Point[] includePoints)
+    public ControlPoint(ControlPointNames name,final Point[] includePoints)
     {
+        this.name = name;
         this.includePoints = includePoints;
         for (Point point : includePoints
         )
@@ -66,9 +68,9 @@ public class ControlPoint extends Location
 
     public enum ControlPointNames
     {
-        S01,
-        S02,
-        S03,
-        S04,
+        S1,
+        S2,
+        S3,
+        S4,
     }
 }

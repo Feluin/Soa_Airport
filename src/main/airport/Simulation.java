@@ -56,7 +56,7 @@ public class Simulation {
         FlightRecorder.instance.startup();
         FlightRecorder.instance.init();
         LocationManager locationManager=airport.getLocationmanager();
-        locationManager.getLocationByString("S04");
+        locationManager.getLocationByString("S4");
 
         //airport.getTower().runwayclearedtoLand(aircraft11, locationManager.getRunwayDirection(RunwayDirection));
         airport.getApronControl().taxi("F01","E01", Arrays.asList("",""),"X04");
