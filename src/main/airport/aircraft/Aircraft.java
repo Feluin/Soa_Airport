@@ -135,7 +135,7 @@ public class Aircraft extends Subscriber
     }
 
     @Subscribe
-    public void land(RunwayClearedToLandEvent runwayClearedToLandEvent)
+    public void recieve(RunwayClearedToLandEvent runwayClearedToLandEvent)
     {
         if (this.equals(runwayClearedToLandEvent.getAircraft()))
         {
