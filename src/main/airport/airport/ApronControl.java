@@ -14,13 +14,16 @@ public class ApronControl
 {
     private EventBus eventBus;
     private String name;
+    private Airport airport;
     private LocationManager manager;
 
     public ApronControl(String name,
-        LocationManager manager)
+                        Airport airport)
     {
         this.name = name;
-        this.manager = manager;
+
+        this.airport = airport;
+        manager=airport.getLocationmanager();
     }
 
     public void addSubscriber(Subscribe subscriber)
@@ -46,8 +49,7 @@ public class ApronControl
         List<String> junktions,
         String end)
     {
-        //TODO getAircaft
-        taxi(new Aircraft(), manager.getLocationByString(start), junktions.stream().map(s ->  manager.getLocationByString(s)).collect(Collectors.toList()), manager.getLocationByString(end));
+        taxi(airport.getAircaft(aircaft), manager.getLocationByString(start), junktions.stream().map(s ->  manager.getLocationByString(s)).collect(Collectors.toList()), manager.getLocationByString(end));
     }
 
 }

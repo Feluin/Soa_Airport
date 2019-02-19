@@ -25,7 +25,7 @@ public class Airport
     {
         this.name = name;
         this.tower = new Tower("BER Tower");
-        this.apronControl = new ApronControl("BER ApronControl",manager);
+        this.apronControl = new ApronControl("BER ApronControl",this);
 
     }
 
