@@ -3,6 +3,7 @@ package airport;
 import airport.aircraft.Aircraft;
 import airport.airport.Airport;
 import airport.airport.locations.LocationManager;
+import airport.airport.locations.RunwayDirection;
 import airport.database.FlightRecorder;
 
 import java.util.Arrays;
@@ -22,11 +23,12 @@ public class Simulation {
         LocationManager locationManager=airport.getLocationmanager();
         locationManager.getLocationByString("S4");
 
-        //airport.getTower().runwayclearedtoLand(aircraft11, locationManager.getRunwayDirection(RunwayDirection));
-        airport.getApronControl().taxi("F01","E01", Arrays.asList("",""),"X04");
-//        airport.getTower().holdshort(aircraft11, ); ;
-//        airport.getTower().holdshort(aircraft1, );
-//        airport.getTower().runwayClearedToTakeoff(aircraft1, );
+        airport.getTower().runwayclearedtoLand("F01", "O8L");
+        airport.getTower().holdshort("F11", "S1");
+        airport.getApronControl().taxi("F01","O2", Arrays.asList("O3","O4", "O5", "X9"),"S04");
+        airport.getTower().holdshort("F01", "S4" );
+        airport.getApronControl().taxi("F11", "01", null, "A01");
+        airport.getTower().runwayClearedToTakeoff("F01", "O8R" );
 //
 //        airport.getTower().runwayclearedtoLand(aircraft12, );
 //        airport.getTower().holdshort(aircraft12, );
