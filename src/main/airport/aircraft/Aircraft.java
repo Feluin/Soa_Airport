@@ -45,7 +45,7 @@ public class Aircraft implements IAircraft {
 
         airCraftName = name;
         currentLocation = location;
-        currentLocation.setAircraft(this);
+       if(currentLocation!=null) currentLocation.setAircraft(this);
         System.out.println("---Airplane.build");
         id = 0;
         manufacturer = "EB-A380";
