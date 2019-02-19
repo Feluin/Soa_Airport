@@ -21,10 +21,12 @@ import airport.airport.locations.Point;
 import airport.database.FlightRecorder;
 import com.google.common.eventbus.Subscribe;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aircraft implements IAircraft {
+public class Aircraft extends Subscriber
+{
     private int id;
     private String manufacturer;
     private int numberOfSeatFirstClass;
@@ -37,28 +39,38 @@ public class Aircraft implements IAircraft {
     private List<Crew> crew = new ArrayList<>();
     private AirCraftName airCraftName;
 
-    public Aircraft(AirCraftName name, Location location) {
+    public Aircraft(AirCraftName name,
+        Location location)
+    {
         build(name, location);
     }
 
-    public void build(AirCraftName name, Location location) {
+    public void build(AirCraftName name,
+        Location location)
+    {
 
         airCraftName = name;
         currentLocation = location;
-       if(currentLocation!=null) currentLocation.setAircraft(this);
+        if (currentLocation != null)
+        {
+            currentLocation.setAircraft(this);
+        }
         System.out.println("---Airplane.build");
         id = 0;
         manufacturer = "EB-A380";
         numberOfSeatFirstClass = 60;
         numberOfSeatBusinessClass = 100;
         numberOfSeatEconomyClass = 408;
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 60; i++)
+        {
             seats.add(new Seat(Bookingclass.First, i));
         }
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i++)
+        {
             seats.add(new Seat(Bookingclass.Business, i));
         }
-        for (int i = 0; i < 408; i++) {
+        for (int i = 0; i < 408; i++)
+        {
             seats.add(new Seat(Bookingclass.Economy, i));
         }
         wing.add(new Wing(WingPosition.Left, new Flap(0), new Fan(BladeMaterial.Titan)));
@@ -75,83 +87,100 @@ public class Aircraft implements IAircraft {
         System.out.println("---Airplane has been builed!");
     }
 
-    @Override
     @Subscribe
-    public void taxi(TaxiEvent taxiEvent) {
-        if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint())) {
+    public void recieve(TaxiEvent taxiEvent)
+    {
+        if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint()))
+        {
             FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
-            if(taxiEvent.getJunktionList()!=null)
-            taxiEvent.getJunktionList().forEach(this::moveAircraftToLocation);
+            if (taxiEvent.getJunktionList() != null)
+            {
+                taxiEvent.getJunktionList().forEach(this::moveAircraftToLocation);
+            }
             moveAircraftToLocation(taxiEvent.getEndpoint());
         }
     }
 
-    @Override
     @Subscribe
-    public void holdShort(HoldShortEvent holdShortEvent) {
-        if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation())) {
+    public void recieve(HoldShortEvent holdShortEvent)
+    {
+        if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation()))
+        {
             FlightRecorder.instance.insert(id, "receive: " + holdShortEvent);
 
 //TODO
         }
     }
 
-    @Override
     @Subscribe
-    public void takeOff(RunwayClearedForTakeOffEvent runwayClearedForTakeOffEventEvent) {
-        if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft())) {
+    public void recieve(RunwayClearedForTakeOffEvent runwayClearedForTakeOffEventEvent)
+    {
+        if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft()))
+        {
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedForTakeOffEventEvent);
-            if (currentLocation instanceof ControlPoint && ((ControlPoint) currentLocation).getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()) ||
-                    currentLocation instanceof Point && ((Point) currentLocation).isControlpoint() &&
-                            ((Point) currentLocation).getControlPoint().getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection())) {
+            if (currentLocation instanceof ControlPoint &&
+                ((ControlPoint) currentLocation).getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()) ||
+                currentLocation instanceof Point && ((Point) currentLocation).isControlpoint() &&
+                    ((Point) currentLocation).getControlPoint().getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()))
+            {
 
                 currentLocation.setAircraft(null);
-                currentLocation=null;
-            } else   {
+                currentLocation = null;
+            } else
+            {
                 //TODO ERROR
             }
 
         }
     }
 
-    @Override
     @Subscribe
-    public void land(RunwayClearedToLandEvent runwayClearedToLandEvent) {
-        if (this.equals(runwayClearedToLandEvent.getAircraft())) {
+    public void land(RunwayClearedToLandEvent runwayClearedToLandEvent)
+    {
+        if (this.equals(runwayClearedToLandEvent.getAircraft()))
+        {
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedToLandEvent);
 
 //TODO
         }
     }
 
-    public void moveAircraftToLocation(Location location) {
-        if (currentLocation.isPossibleLocation(location)) {
-            if (location.getAircraft() == null) {
-                if (location instanceof Point && ((Point) location).isControlpoint()) {
+    public void moveAircraftToLocation(Location location)
+    {
+        if (currentLocation.isPossibleLocation(location))
+        {
+            if (location.getAircraft() == null)
+            {
+                if (location instanceof Point && ((Point) location).isControlpoint())
+                {
                     ControlPoint controlPoint = ((Point) location).getControlPoint();
                     currentLocation.removeAircraft(this);
                     controlPoint.setAircraft(this);
                     currentLocation = controlPoint;
 
-                } else {
+                } else
+                {
                     currentLocation.removeAircraft(this);
                     location.setAircraft(this);
                     currentLocation = location;
                 }
-            } else {
+            } else
+            {
                 //TODO da is ein aircraft schon
             }
-        } else {
+        } else
+        {
             //TODO operation not possible
         }
     }
 
-
-    public AirCraftName getAirCraftName() {
+    public AirCraftName getAirCraftName()
+    {
         return airCraftName;
     }
 
-    public enum AirCraftName {
+    public enum AirCraftName
+    {
         F01, F02, F03,
         F04, F05, F06,
         F07, F08, F09,

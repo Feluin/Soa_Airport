@@ -1,7 +1,9 @@
 package airport.airport;
 
+import airport.AirCraftEvents.HoldShortEvent;
 import airport.AirCraftEvents.TaxiEvent;
 import airport.aircraft.Aircraft;
+import airport.aircraft.Subscriber;
 import airport.airport.locations.Location;
 import airport.airport.locations.LocationManager;
 import com.google.common.eventbus.EventBus;
@@ -26,12 +28,12 @@ public class ApronControl
         manager=airport.getLocationmanager();
     }
 
-    public void addSubscriber(Subscribe subscriber)
+    public void addSubscriber(Subscriber subscriber)
     {
         eventBus.register(subscriber);
     }
 
-    public void removeSubscriber(Subscribe subscriber)
+    public void removeSubscriber(Subscriber subscriber)
     {
         eventBus.unregister(subscriber);
     }
@@ -51,5 +53,15 @@ public class ApronControl
     {
         taxi(airport.getAircaft(aircaft), manager.getLocationByString(start), junktions.stream().map(s ->  manager.getLocationByString(s)).collect(Collectors.toList()), manager.getLocationByString(end));
     }
+    public void holdshort(Aircraft aircraft,
+        Location location)
+    {
+        eventBus.post(new HoldShortEvent(aircraft, location));
+    }
 
+    public void holdshort(String aircraft,
+        String location)
+    {
+        holdshort(Airport.instance.getAircaft(aircraft), Airport.instance.getLocationmanager().getLocationByString(location));
+    }
 }

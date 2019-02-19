@@ -25,9 +25,9 @@ public class Simulation {
         locationManager.getLocationByString("S4");
 
         airport.getTower().runwayclearedtoLand("F01", "L08");
-        airport.getTower().holdshort("F11", "S1");
+        airport.getApronControl().holdshort("F11", "S1");
         airport.getApronControl().taxi("F01","O2", Arrays.asList("O3","O4", "O5", "X9"),"S4");
-        airport.getTower().holdshort("F01", "S4" );
+        airport.getApronControl().holdshort("F01", "S4" );
         airport.getApronControl().taxi("F11", "O1", Collections.emptyList(), "A01");
         airport.getTower().runwayClearedToTakeoff("F01", "R08" );
 //
