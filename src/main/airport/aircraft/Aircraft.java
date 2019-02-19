@@ -80,6 +80,7 @@ public class Aircraft implements IAircraft {
     public void taxi(TaxiEvent taxiEvent) {
         if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint())) {
             FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
+            if(taxiEvent.getJunktionList()!=null)
             taxiEvent.getJunktionList().forEach(this::moveAircraftToLocation);
             moveAircraftToLocation(taxiEvent.getEndpoint());
         }
