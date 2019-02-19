@@ -14,7 +14,6 @@ public class LocationManager {
     private Map<ControlPoint.ControlPointNames, ControlPoint> controlpoints = new HashMap<>();
 
     public LocationManager() {
-
         for (GateName gateName :
                 GateName.values()) {
             Gate gate = new Gate(gateName);
@@ -82,13 +81,7 @@ public class LocationManager {
         createJunktion("L5", "N6", "X14");
         createJunktion( "M5","O6","X15");
         createJunktion("M5","N6");
-
-
-
-
-
-
-    }
+   }
 
     public Map<GateName, Gate> getAllgates() {
         return allgates;
