@@ -10,6 +10,7 @@ import java.util.Set;
 
 public abstract class Location
 {
+
     private Set<Location> possiblelocations = new HashSet<>();
 
     Aircraft currentAircraft;

@@ -2,6 +2,7 @@ package airport.airport;
 
 import airport.aircraft.Aircraft;
 import airport.airport.locations.Gate;
+import airport.airport.locations.Location;
 import airport.airport.locations.LocationManager;
 
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ public class Airport
     private String name;
     private LocationManager manager = new LocationManager();
 
-    private Map<Gate, Aircraft> gateairportmap = new HashMap<>();
-    private List<Aircraft> aiplaneList = new ArrayList<>();
+
+    private Map<String,Aircraft> aircraftHashMap =new HashMap<>();
     private Tower tower;
     private ApronControl apronControl;
 
@@ -26,17 +27,20 @@ public class Airport
         this.tower = new Tower("BER Tower");
         this.apronControl = new ApronControl("BER ApronControl",manager);
 
-        createLocations();
+    }
+
+    public void registerAircraft(Aircraft.AirCraftName name, Location location){
+        Aircraft aircraft= new Aircraft(name,location);
+        aircraftHashMap.put(name.name(),aircraft);
+
+    }
+    public Aircraft getAircaft(String s){
+         return aircraftHashMap.get(s);
     }
 
     public LocationManager getLocationmanager()
     {
         return manager;
-    }
-
-    private void createLocations()
-    {
-
     }
 
     public Tower getTower()

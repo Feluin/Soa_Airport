@@ -4,10 +4,8 @@ import airport.airport.locations.Gate.GateName;
 import airport.airport.locations.Point.PointName;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class LocationManager {
     private Map<String, Location> allLocations = new HashMap<>();
@@ -121,7 +119,10 @@ public class LocationManager {
     }
 
     public void createJunktion(String... locationnames) {
-        ArrayList<Location> locations = Arrays.stream(locationnames).map(this::getLocationByString).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Location> locations = new ArrayList<>();
+        for (String l : locationnames) {
+            locations.add(getLocationByString(l));
+        }
         Location.createJunktion(locations);
     }
 }
