@@ -10,11 +10,11 @@ import java.util.Set;
 
 public abstract class Location
 {
-    Set<Location> possiblelocations = new HashSet<>();
+    private Set<Location> possiblelocations = new HashSet<>();
 
-    protected Aircraft currentAircraft;
+    Aircraft currentAircraft;
 
-    public void addPossibleLocations(List<Location> junktionlist)
+    void addPossibleLocations(List<Location> junktionlist)
     {
         possiblelocations.addAll(junktionlist);
     }
@@ -24,7 +24,7 @@ public abstract class Location
         return possiblelocations;
     }
 
-    public static void createJunktion(ArrayList<Location> locations)
+    static void createJunktion(ArrayList<Location> locations)
     {
         locations.forEach(location -> location.addPossibleLocations(locations));
     }
