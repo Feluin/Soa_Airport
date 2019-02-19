@@ -8,33 +8,60 @@ import airport.airport.locations.RunwayDirection;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
-public class Tower {
+public class Tower
+{
     private EventBus eventBus;
     private String name;
 
-    public Tower(String name) {
+    public Tower(String name)
+    {
         this.name = name;
         eventBus = new EventBus();
     }
 
-    public void addSubscriber(Subscribe subscriber) {
+    public void addSubscriber(Subscribe subscriber)
+    {
         eventBus.register(subscriber);
     }
 
-    public void removeSubscriber(Subscribe subscriber) {
+    public void removeSubscriber(Subscribe subscriber)
+    {
         eventBus.unregister(subscriber);
     }
 
-    public void holdshort(Aircraft aircraft, Location location) {
+    public void holdshort(Aircraft aircraft,
+        Location location)
+    {
         eventBus.post(new HoldShortEvent(aircraft, location));
     }
 
-    public void runwayclearedtoLand(Aircraft aircraft, RunwayDirection runwayDirection) {
+    public void holdshort(String aircraft,
+        String location)
+    {
+        holdshort(Airport.instance.getAircaft(aircraft), Airport.instance.getLocationmanager().getLocationByString(location));
+    }
+
+    public void runwayclearedtoLand(Aircraft aircraft,
+        RunwayDirection runwayDirection)
+    {
         eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
     }
 
-    public void runwayClearedToTakeoff(Aircraft aircraft, RunwayDirection runwayDirection) {
+    public void runwayclearedtoLand(String aircraft,
+        String runwayDirection)
+    {
+        runwayclearedtoLand(Airport.instance.getAircaft(aircraft), RunwayDirection.valueOf(runwayDirection));
+    }
+
+    public void runwayClearedToTakeoff(Aircraft aircraft,
+        RunwayDirection runwayDirection)
+    {
         eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
+    }
+    public void runwayClearedToTakeoff(String aircraft,
+        String  runwayDirection)
+    {
+        runwayClearedToTakeoff(Airport.instance.getAircaft(aircraft), RunwayDirection.valueOf(runwayDirection));
     }
 
 }

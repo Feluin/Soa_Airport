@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="b46a5cea-e513-43c1-9028-3093ff92e1f5" name="Default Changelist" comment="&quot;Get that shit outta my master.&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/airport/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/airport/Simulation.java" afterDir="false" />
@@ -9,6 +10,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/airport/airport/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/airport/airport/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/airport/airport/locations/ControlPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/airport/airport/locations/ControlPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/airport/airport/locations/LocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/airport/airport/locations/LocationManager.java" afterDir="false" />
+=======
+    <list default="true" id="b46a5cea-e513-43c1-9028-3093ff92e1f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/airport/airport/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/airport/airport/Tower.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,13 +41,13 @@
           <entry key="JAVA/airport" value="1" />
           <entry key="RegextoDEA" value="1" />
           <entry key="aircraft" value="1" />
-          <entry key="java" value="48" />
+          <entry key="java" value="49" />
           <entry key="java___jb_tmp___" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="48" />
+          <entry key="JAVA" value="49" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="UML" value="2" />
           <entry key="UNKNOWN" value="1" />
@@ -51,14 +56,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="4084" />
+          <entry key="java" value="4111" />
           <entry key="java___jb_tmp___" value="1" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4084" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="JAVA" value="4111" />
+          <entry key="PLAIN_TEXT" value="34" />
         </counts>
       </usages-collector>
     </session>
@@ -99,6 +105,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="LocationManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/LocationManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,6 +113,19 @@
               <caret line="39" column="154" selection-start-line="39" selection-start-column="154" selection-end-line="39" selection-end-column="154" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/LocationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4629#4630#0" expanded="true" />
+                <element signature="e#4682#4683#0" expanded="true" />
+                <element signature="e#4974#4975#0" expanded="true" />
+                <element signature="e#5019#5020#0" expanded="true" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -123,8 +143,13 @@
       <file leaf-file-name="Aircraft.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/airport/aircraft/Aircraft.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="425">
               <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+=======
+            <state relative-caret-position="135">
+              <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#5566#5567#0" expanded="true" />
                 <element signature="e#5601#5602#0" expanded="true" />
@@ -133,8 +158,26 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="ControlPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/ControlPoint.java">
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Tower.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+              <folding>
+                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/RunwayDirection.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
@@ -147,11 +190,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="Airport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Airport.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
               <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Airport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -193,8 +244,18 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< Updated upstream
       <find>\(..\)</find>
     </findStrings>
+=======
+      <find>N</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>M</replace>
+      <replace>L</replace>
+    </replaceStrings>
+>>>>>>> Stashed changes
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -245,10 +306,14 @@
         <option value="$PROJECT_DIR$/src/main/airport/airport/locations/RunwayDirection.java" />
         <option value="$PROJECT_DIR$/src/main/airport/airport/locations/ControlPoint.java" />
         <option value="$PROJECT_DIR$/src/main/airport/airport/locations/LocationManager.java" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/main/airport/aircraft/Aircraft.java" />
         <option value="$PROJECT_DIR$/src/main/airport/airport/Tower.java" />
         <option value="$PROJECT_DIR$/src/main/airport/airport/Airport.java" />
         <option value="$PROJECT_DIR$/src/main/airport/Simulation.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/airport/airport/Tower.java" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -265,8 +330,12 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< Updated upstream
     <option name="x" value="481" />
     <option name="y" value="-11" />
+=======
+    <option name="x" value="-7" />
+>>>>>>> Stashed changes
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -278,9 +347,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -291,7 +363,11 @@
             <path>
               <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Soa_Airport" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
@@ -352,6 +428,7 @@
               <item name="airport" type="462c0819:PsiDirectoryNode" />
               <item name="aodb" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< Updated upstream
             <path>
               <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Soa_Airport" type="462c0819:PsiDirectoryNode" />
@@ -364,10 +441,18 @@
               <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
+=======
+>>>>>>> Stashed changes
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,8 +513,12 @@
       <workItem from="1547539552248" duration="5369000" />
       <workItem from="1547716104641" duration="12925000" />
       <workItem from="1550496629957" duration="7043000" />
+<<<<<<< Updated upstream
       <workItem from="1550523184293" duration="1220000" />
       <workItem from="1550569339884" duration="2047000" />
+=======
+      <workItem from="1550523184293" duration="2248000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="best commit ever">
       <created>1547400287061</created>
@@ -494,6 +583,7 @@
       <option name="project" value="LOCAL" />
       <updated>1550523213609</updated>
     </task>
+<<<<<<< Updated upstream
     <task id="LOCAL-00010" summary="Who Let the Bugs Out??">
       <created>1550564299896</created>
       <option name="number" value="00010" />
@@ -535,6 +625,27 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
+=======
+    <task id="LOCAL-00010" summary="Locations finished">
+      <created>1550524441628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1550524441628</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="38477000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+>>>>>>> Stashed changes
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -610,9 +721,14 @@
     <MESSAGE value="fixed conflicts (LOL merge -s ours; push -f)" />
     <MESSAGE value="after of this commit remember do a git reset hard" />
     <MESSAGE value="This bug has driven lots of coders completely mad. You won't believe how it ended up being fixed" />
+<<<<<<< Updated upstream
     <MESSAGE value="Who Let the Bugs Out??" />
     <MESSAGE value="&quot;Get that shit outta my master.&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Get that shit outta my master.&quot;" />
+=======
+    <MESSAGE value="Locations finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Locations finished" />
+>>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1276,6 +1392,7 @@
     <entry file="https://github.com/Feluin/RegextoDEA">
       <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
+<<<<<<< Updated upstream
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1284,6 +1401,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/Point.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/Gate.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
@@ -1329,6 +1449,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1356,6 +1477,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/airport/AirCraftEvents/HoldShortEvent.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/airport/airport/locations/RunwayDirection.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -1386,6 +1510,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1394,6 +1519,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Tower.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/airport/Simulation.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
@@ -1438,12 +1566,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/airport/aircraft/Aircraft.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="425">
           <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
           <folding>
             <element signature="e#5566#5567#0" expanded="true" />
             <element signature="e#5601#5602#0" expanded="true" />
+=======
+        <state relative-caret-position="119">
+          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4629#4630#0" expanded="true" />
+            <element signature="e#4682#4683#0" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
+            <element signature="e#5019#5020#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/airport/aircraft/Aircraft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Tower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/airport/airport/Airport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
