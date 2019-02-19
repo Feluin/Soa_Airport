@@ -53,9 +53,9 @@ public enum FlightRecorder {
            StringBuilder sqlStringBuilder = new StringBuilder();
            sqlStringBuilder.append("CREATE TABLE data ").append(" ( ");
           sqlStringBuilder.append("id BIGINT NOT NULL").append(",");
-          sqlStringBuilder.append("aircarft_id").append(", ");
-          sqlStringBuilder.append("unix_timestamp").append(", ");
-          sqlStringBuilder.append("event_message");
+          sqlStringBuilder.append("aircarft_id BIGINT NOT NULL").append(", ");
+          sqlStringBuilder.append("unix_timestamp BIGINT NOT NULL").append(", ");
+          sqlStringBuilder.append("event_message VARCHAR(50) NOT NULL").append(", ");
           sqlStringBuilder.append("PRIMARY KEY (id)");
            sqlStringBuilder.append(" )");
            update(sqlStringBuilder.toString());
