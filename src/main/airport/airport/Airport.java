@@ -32,6 +32,11 @@ public class Airport
     public void registerAircraft(Aircraft.AirCraftName name, Location location){
         Aircraft aircraft= new Aircraft(name,location);
         aircraftHashMap.put(name.name(),aircraft);
+        if(location==null){
+            tower.addSubscriber(aircraft);
+        }else {
+            apronControl.addSubscriber(aircraft);
+        }
 
     }
     public Aircraft getAircaft(String s){
