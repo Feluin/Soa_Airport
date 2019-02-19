@@ -8,11 +8,13 @@ public class ControlPoint extends Location
 {
     private ControlPointNames name;
     private Point[] includePoints;
+    private RunwayDirection runwayDirection;
 
-    public ControlPoint(ControlPointNames name,final Point[] includePoints)
+    public ControlPoint(ControlPointNames name, final Point[] includePoints, RunwayDirection runwayDirection)
     {
         this.name = name;
         this.includePoints = includePoints;
+        this.runwayDirection = runwayDirection;
         for (Point point : includePoints
         )
         {
@@ -64,6 +66,10 @@ public class ControlPoint extends Location
             }
         }
         return null;
+    }
+
+    public RunwayDirection getRunwayDirection() {
+        return runwayDirection;
     }
 
     public enum ControlPointNames

@@ -38,13 +38,13 @@ public class Aircraft implements IAircraft {
     private AirCraftName airCraftName;
 
     public Aircraft(AirCraftName name, Location location) {
-        build(name,location);
+        build(name, location);
     }
 
     public void build(AirCraftName name, Location location) {
 
-        airCraftName=name;
-        currentLocation=location;
+        airCraftName = name;
+        currentLocation = location;
         currentLocation.setAircraft(this);
         System.out.println("---Airplane.build");
         id = 0;
@@ -80,7 +80,8 @@ public class Aircraft implements IAircraft {
     public void taxi(TaxiEvent taxiEvent) {
         if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint())) {
             FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
-            //TODO
+            taxiEvent.getJunktionList().forEach(this::moveAircraftToLocation);
+            moveAircraftToLocation(taxiEvent.getEndpoint());
         }
     }
 
@@ -99,8 +100,16 @@ public class Aircraft implements IAircraft {
     public void takeOff(RunwayClearedForTakeOffEvent runwayClearedForTakeOffEventEvent) {
         if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft())) {
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedForTakeOffEventEvent);
+            if (currentLocation instanceof ControlPoint && ((ControlPoint) currentLocation).getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()) ||
+                    currentLocation instanceof Point && ((Point) currentLocation).isControlpoint() &&
+                            ((Point) currentLocation).getControlPoint().getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection())) {
 
-//TODO
+                currentLocation.setAircraft(null);
+                currentLocation=null;
+            } else   {
+                //TODO ERROR
+            }
+
         }
     }
 
@@ -141,14 +150,14 @@ public class Aircraft implements IAircraft {
         return airCraftName;
     }
 
-    public enum AirCraftName{
-        F01,F02,F03,
-        F04,F05,F06,
-        F07,F08,F09,
-        F10,F11,F12,
-        F13,F14,F15,
-        F16,F17,F18,
-        F19,F20,
+    public enum AirCraftName {
+        F01, F02, F03,
+        F04, F05, F06,
+        F07, F08, F09,
+        F10, F11, F12,
+        F13, F14, F15,
+        F16, F17, F18,
+        F19, F20,
     }
 
 }

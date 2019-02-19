@@ -32,8 +32,9 @@ public class Tower {
     public void runwayclearedtoLand(Aircraft aircraft, RunwayDirection runwayDirection) {
         eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
     }
-    public void runwayClearedToTakeoff(Aircraft aircraft,RunwayDirection runwayDirection){
-        eventBus.post(new RunwayClearedToLandEvent(aircraft,runwayDirection));
+
+    public void runwayClearedToTakeoff(Aircraft aircraft, RunwayDirection runwayDirection) {
+        eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
     }
 
 }

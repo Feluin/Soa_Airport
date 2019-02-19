@@ -28,16 +28,16 @@ public class LocationManager {
             allpoints.put(pointsname, point);
         }
         final ControlPoint controlPoint1 = controlpoints.put(ControlPoint.ControlPointNames.S1,
-                new ControlPoint(ControlPoint.ControlPointNames.S1, new Point[]{getPoint(Point.PointName.O1), getPoint(Point.PointName.N1)}));
+                new ControlPoint(ControlPoint.ControlPointNames.S1, new Point[]{getPoint(Point.PointName.O1), getPoint(Point.PointName.N1)},RunwayDirection.R26));
         allLocations.put(ControlPoint.ControlPointNames.S1.name(), controlPoint1);
         final ControlPoint controlPoint2 = controlpoints.put(ControlPoint.ControlPointNames.S2,
-                new ControlPoint(ControlPoint.ControlPointNames.S2, new Point[]{getPoint(Point.PointName.L1), getPoint(Point.PointName.M1)}));
+                new ControlPoint(ControlPoint.ControlPointNames.S2, new Point[]{getPoint(Point.PointName.L1), getPoint(Point.PointName.M1)},RunwayDirection.L08));
         allLocations.put(ControlPoint.ControlPointNames.S2.name(), controlPoint2);
         final ControlPoint controlPoint3 = controlpoints.put(ControlPoint.ControlPointNames.S3,
-                new ControlPoint(ControlPoint.ControlPointNames.S3, new Point[]{getPoint(Point.PointName.O6), getPoint(PointName.N6)}));
+                new ControlPoint(ControlPoint.ControlPointNames.S3, new Point[]{getPoint(Point.PointName.O6), getPoint(PointName.N6)}, RunwayDirection.L26));
         allLocations.put(ControlPoint.ControlPointNames.S3.name(), controlPoint3);
         final ControlPoint controlPoint4 = controlpoints.put(ControlPoint.ControlPointNames.S4,
-                new ControlPoint(ControlPoint.ControlPointNames.S4, new Point[]{getPoint(Point.PointName.L6), getPoint(PointName.M6)}));
+                new ControlPoint(ControlPoint.ControlPointNames.S4, new Point[]{getPoint(Point.PointName.L6), getPoint(PointName.M6)}, RunwayDirection.R08));
         allLocations.put(ControlPoint.ControlPointNames.S4.name(), controlPoint4);
 
         createJunktion("S1", "O2", "N2");

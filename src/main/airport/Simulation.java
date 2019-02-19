@@ -7,11 +7,13 @@ import airport.database.FlightRecorder;
 
 import java.util.Arrays;
 
+import static airport.aircraft.Aircraft.AirCraftName.valueOf;
+
 public class Simulation {
 
 
 
-    private Airport airport = new Airport("BER");
+    private Airport airport = Airport.instance;
 
     public void startSimulation() {
        initAircrafts();
@@ -40,26 +42,26 @@ public class Simulation {
     }
 
     private void initAircrafts() {
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F01"),airport.getLocationmanager().getLocationByString("A01"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F02"),airport.getLocationmanager().getLocationByString("A02"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F03"),airport.getLocationmanager().getLocationByString("A03"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F04"),airport.getLocationmanager().getLocationByString("A04"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F05"),airport.getLocationmanager().getLocationByString("A05"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F06"),airport.getLocationmanager().getLocationByString("B01"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F07"),airport.getLocationmanager().getLocationByString("B02"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F08"),airport.getLocationmanager().getLocationByString("B03"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F09"),airport.getLocationmanager().getLocationByString("B04"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F10"),airport.getLocationmanager().getLocationByString("B05"));
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F11"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F12"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F13"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F14"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F15"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F16"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F17"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F18"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F19"),null);
-        airport.registerAircraft(Aircraft.AirCraftName.valueOf("F20"),null);
+        airport.registerAircraft(valueOf("F01"),airport.getLocationmanager().getLocationByString("A01"));
+        airport.registerAircraft(valueOf("F02"),airport.getLocationmanager().getLocationByString("A02"));
+        airport.registerAircraft(valueOf("F03"),airport.getLocationmanager().getLocationByString("A03"));
+        airport.registerAircraft(valueOf("F04"),airport.getLocationmanager().getLocationByString("A04"));
+        airport.registerAircraft(valueOf("F05"),airport.getLocationmanager().getLocationByString("A05"));
+        airport.registerAircraft(valueOf("F06"),airport.getLocationmanager().getLocationByString("B01"));
+        airport.registerAircraft(valueOf("F07"),airport.getLocationmanager().getLocationByString("B02"));
+        airport.registerAircraft(valueOf("F08"),airport.getLocationmanager().getLocationByString("B03"));
+        airport.registerAircraft(valueOf("F09"),airport.getLocationmanager().getLocationByString("B04"));
+        airport.registerAircraft(valueOf("F10"),airport.getLocationmanager().getLocationByString("B05"));
+        airport.registerAircraft(valueOf("F11"),null);
+        airport.registerAircraft(valueOf("F12"),null);
+        airport.registerAircraft(valueOf("F13"),null);
+        airport.registerAircraft(valueOf("F14"),null);
+        airport.registerAircraft(valueOf("F15"),null);
+        airport.registerAircraft(valueOf("F16"),null);
+        airport.registerAircraft(valueOf("F17"),null);
+        airport.registerAircraft(valueOf("F18"),null);
+        airport.registerAircraft(valueOf("F19"),null);
+        airport.registerAircraft(valueOf("F20"),null);
     }
 
 }

@@ -16,12 +16,12 @@ public class Airport
     private String name;
     private LocationManager manager = new LocationManager();
 
-
+    public static Airport instance=new Airport("BER");
     private Map<String,Aircraft> aircraftHashMap =new HashMap<>();
     private Tower tower;
     private ApronControl apronControl;
 
-    public Airport(String name)
+    private Airport(String name)
     {
         this.name = name;
         this.tower = new Tower("BER Tower");
