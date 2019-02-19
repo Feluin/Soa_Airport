@@ -7,6 +7,7 @@ import airport.airport.locations.RunwayDirection;
 import airport.database.FlightRecorder;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static airport.aircraft.Aircraft.AirCraftName.valueOf;
 
@@ -27,8 +28,8 @@ public class Simulation {
         airport.getTower().holdshort("F11", "S1");
         airport.getApronControl().taxi("F01","O2", Arrays.asList("O3","O4", "O5", "X9"),"S4");
         airport.getTower().holdshort("F01", "S4" );
-        airport.getApronControl().taxi("F11", "01", null, "A01");
-        airport.getTower().runwayClearedToTakeoff("F01", "O8R" );
+        airport.getApronControl().taxi("F11", "O1", Collections.emptyList(), "A01");
+        airport.getTower().runwayClearedToTakeoff("F01", "R08" );
 //
 //        airport.getTower().runwayclearedtoLand(aircraft12, );
 //        airport.getTower().holdshort(aircraft12, );

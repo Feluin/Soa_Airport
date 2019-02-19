@@ -21,7 +21,7 @@ public class ApronControl
                         Airport airport)
     {
         this.name = name;
-
+        eventBus =new EventBus();
         this.airport = airport;
         manager=airport.getLocationmanager();
     }
