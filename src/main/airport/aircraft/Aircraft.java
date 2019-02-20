@@ -228,4 +228,8 @@ public class Aircraft extends Subscriber
         }
     }
 
+    @Override
+    public String toString() {
+        return airCraftName.toString();
+    }
 }

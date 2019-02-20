@@ -36,4 +36,9 @@ public class TaxiEvent extends AircraftEvent
     public Location getEndpoint() {
         return endpoint;
     }
+
+    @Override
+    public String toString() {
+        return startpoint.toString() + " " + junktionList.toString() + " " + endpoint;
+    }
 }

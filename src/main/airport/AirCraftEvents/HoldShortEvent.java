@@ -18,4 +18,9 @@ public class HoldShortEvent extends AircraftEvent
     public Location getLocation() {
         return location;
     }
+
+    @Override
+    public String toString() {
+        return location.toString();
+    }
 }

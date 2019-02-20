@@ -37,4 +37,9 @@ public class Gate extends Location
     public Gate(GateName name){
         gateName=name;
     }
+
+    @Override
+    public String toString() {
+        return gateName.name().toString();
+    }
 }
