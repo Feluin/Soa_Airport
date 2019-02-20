@@ -35,7 +35,7 @@ public class LocationManager
             new ControlPoint(ControlPoint.ControlPointNames.S1, new Point[]{getPoint(Point.PointName.O1), getPoint(Point.PointName.N1)},
                 RunwayDirection.R26);
         controlpoints.put(ControlPoint.ControlPointNames.S1, controlPoint1);
-
+        RunwayDirection.R26.setControlPoint(controlPoint1);
         allLocations.put(ControlPoint.ControlPointNames.S1.name(), controlPoint1);
 
         final ControlPoint controlPoint2 =
@@ -43,17 +43,20 @@ public class LocationManager
                 RunwayDirection.L08);
         controlpoints.put(ControlPoint.ControlPointNames.S2, controlPoint2);
         allLocations.put(ControlPoint.ControlPointNames.S2.name(), controlPoint2);
+        RunwayDirection.L08.setControlPoint(controlPoint2);
 
         final ControlPoint controlPoint3 =
             new ControlPoint(ControlPoint.ControlPointNames.S3, new Point[]{getPoint(Point.PointName.O6), getPoint(PointName.N6)},
                 RunwayDirection.L26);
         controlpoints.put(ControlPoint.ControlPointNames.S3, controlPoint3);
         allLocations.put(ControlPoint.ControlPointNames.S3.name(), controlPoint3);
+        RunwayDirection.L26.setControlPoint(controlPoint3);
 
         final ControlPoint controlPoint4 = new ControlPoint(ControlPoint.ControlPointNames.S4, new Point[]{getPoint(
             PointName.L6), getPoint(PointName.M6)}, RunwayDirection.R08);
         controlpoints.put(ControlPoint.ControlPointNames.S4, controlPoint4);
         allLocations.put(ControlPoint.ControlPointNames.S4.name(), controlPoint4);
+        RunwayDirection.R08.setControlPoint(controlPoint4);
 
         createJunktion("S1", "O2", "N2");
         createJunktion("A01", "O1", "O2");

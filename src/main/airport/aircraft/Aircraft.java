@@ -15,13 +15,13 @@ import airport.aircraft.parts.Flap;
 import airport.aircraft.parts.Seat;
 import airport.aircraft.parts.Wing;
 import airport.aircraft.parts.WingPosition;
+import airport.airport.Airport;
 import airport.airport.locations.ControlPoint;
 import airport.airport.locations.Location;
 import airport.airport.locations.Point;
 import airport.database.FlightRecorder;
 import com.google.common.eventbus.Subscribe;
 
-import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +38,7 @@ public class Aircraft extends Subscriber
     private List<Wing> wing = new ArrayList<>();
     private List<Crew> crew = new ArrayList<>();
     private AirCraftName airCraftName;
+    private Frequency frequency;
 
     public Aircraft(AirCraftName name,
         Location location)
@@ -53,7 +54,11 @@ public class Aircraft extends Subscriber
         currentLocation = location;
         if (currentLocation != null)
         {
+            frequency = Frequency.ApronControl;
             currentLocation.setAircraft(this);
+        } else
+        {
+            frequency = Frequency.Tower;
         }
         System.out.println("---Airplane.build");
         id = 0;
@@ -92,6 +97,7 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint()))
         {
+            System.out.println(taxiEvent);
             FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
             if (taxiEvent.getJunktionList() != null)
             {
@@ -106,9 +112,10 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation()))
         {
+            System.out.println(holdShortEvent);
             FlightRecorder.instance.insert(id, "receive: " + holdShortEvent);
 
-//TODO
+            switchfrequency();
         }
     }
 
@@ -117,6 +124,7 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft()))
         {
+            System.out.println(runwayClearedForTakeOffEventEvent);
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedForTakeOffEventEvent);
             if (currentLocation instanceof ControlPoint &&
                 ((ControlPoint) currentLocation).getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()) ||
@@ -137,10 +145,20 @@ public class Aircraft extends Subscriber
     @Subscribe
     public void recieve(RunwayClearedToLandEvent runwayClearedToLandEvent)
     {
+
         if (this.equals(runwayClearedToLandEvent.getAircraft()))
         {
+            System.out.println(runwayClearedToLandEvent);
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedToLandEvent);
-
+            if (currentLocation == null)
+            {
+                ControlPoint controlPoint = runwayClearedToLandEvent.getRunwaydirection().getControlPoint();
+                controlPoint.setAircraft(this);
+                currentLocation = controlPoint;
+            } else
+            {
+                //TODO ERROR
+            }
 //TODO
         }
     }
@@ -188,6 +206,26 @@ public class Aircraft extends Subscriber
         F13, F14, F15,
         F16, F17, F18,
         F19, F20,
+    }
+
+    private enum Frequency
+    {
+        Tower, ApronControl
+    }
+
+    private void switchfrequency()
+    {
+        if (frequency.equals(Frequency.ApronControl))
+        {
+            Airport.instance.getApronControl().removeSubscriber(this);
+            Airport.instance.getTower().addSubscriber(this);
+            frequency = Frequency.Tower;
+        } else
+        {
+            Airport.instance.getApronControl().addSubscriber(this);
+            Airport.instance.getTower().removeSubscriber(this);
+            frequency = Frequency.ApronControl;
+        }
     }
 
 }

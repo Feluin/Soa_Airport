@@ -1,6 +1,7 @@
 package airport.airport;
 
 import airport.AirCraftEvents.HoldShortEvent;
+import airport.AirCraftEvents.RunwayClearedForTakeOffEvent;
 import airport.AirCraftEvents.RunwayClearedToLandEvent;
 import airport.aircraft.Aircraft;
 import airport.aircraft.Subscriber;
@@ -45,12 +46,23 @@ public class Tower
     public void runwayClearedToTakeoff(Aircraft aircraft,
         RunwayDirection runwayDirection)
     {
-        eventBus.post(new RunwayClearedToLandEvent(aircraft, runwayDirection));
+        eventBus.post(new RunwayClearedForTakeOffEvent(aircraft, runwayDirection));
     }
     public void runwayClearedToTakeoff(String aircraft,
         String  runwayDirection)
     {
         runwayClearedToTakeoff(Airport.instance.getAircaft(aircraft), RunwayDirection.valueOf(runwayDirection));
+    }
+    public void holdshort(Aircraft aircraft,
+        Location location)
+    {
+        eventBus.post(new HoldShortEvent(aircraft, location));
+    }
+
+    public void holdshort(String aircraft,
+        String location)
+    {
+        holdshort(Airport.instance.getAircaft(aircraft), Airport.instance.getLocationmanager().getLocationByString(location));
     }
 
 }
