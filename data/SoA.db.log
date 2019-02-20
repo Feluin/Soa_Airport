@@ -1,2 +1,0 @@
-/*C3*/SET SCHEMA PUBLIC
-CREATE TABLE data  ( id BIGINT NOT NULL,aircarft_id BIGINT NOT NULL, unix_timestamp BIGINT NOT NULL, event_message VARCHAR(50) NOT NULL, PRIMARY KEY (id) )
