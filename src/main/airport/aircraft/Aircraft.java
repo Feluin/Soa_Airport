@@ -97,7 +97,6 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(taxiEvent.getAircraft()) && this.currentLocation.equals(taxiEvent.getStartpoint()))
         {
-            System.out.println(taxiEvent);
             FlightRecorder.instance.insert(id, "receive: " + taxiEvent);
             if (taxiEvent.getJunktionList() != null)
             {
@@ -112,7 +111,6 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(holdShortEvent.getAircraft()) && this.currentLocation.equals(holdShortEvent.getLocation()))
         {
-            System.out.println(holdShortEvent);
             FlightRecorder.instance.insert(id, "receive: " + holdShortEvent);
 
             switchfrequency();
@@ -124,7 +122,6 @@ public class Aircraft extends Subscriber
     {
         if (this.equals(runwayClearedForTakeOffEventEvent.getAircraft()))
         {
-            System.out.println(runwayClearedForTakeOffEventEvent);
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedForTakeOffEventEvent);
             if (currentLocation instanceof ControlPoint &&
                 ((ControlPoint) currentLocation).getRunwayDirection().equals(runwayClearedForTakeOffEventEvent.getRunwayDirection()) ||
@@ -148,7 +145,6 @@ public class Aircraft extends Subscriber
 
         if (this.equals(runwayClearedToLandEvent.getAircraft()))
         {
-            System.out.println(runwayClearedToLandEvent);
             FlightRecorder.instance.insert(id, "receive: " + runwayClearedToLandEvent);
             if (currentLocation == null)
             {
@@ -228,4 +224,8 @@ public class Aircraft extends Subscriber
         }
     }
 
+    @Override
+    public String toString() {
+        return airCraftName.toString();
+    }
 }

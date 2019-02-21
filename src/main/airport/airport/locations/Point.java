@@ -37,4 +37,9 @@ public class Point extends Location
     public Point(PointName pointname){
         this.pointName = pointname;
     }
+
+    @Override
+    public String toString() {
+        return pointName.name().toString();
+    }
 }

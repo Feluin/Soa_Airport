@@ -1,3 +1,9 @@
-
 .idea/workspace.xml
+data/*.*
+build/*.*
 .idea/workspace.xml
+build/airport/aircraft/Aircraft$Frequency.class
+build/airport/aircraft/Subscriber.class
+data/SoA.db.properties
+data/SoA.db.script
+data/SoA.db.properties

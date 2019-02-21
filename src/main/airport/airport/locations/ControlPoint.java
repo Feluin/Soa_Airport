@@ -79,4 +79,9 @@ public class ControlPoint extends Location
         S3,
         S4,
     }
+
+    @Override
+    public String toString() {
+        return name.name().toString();
+    }
 }

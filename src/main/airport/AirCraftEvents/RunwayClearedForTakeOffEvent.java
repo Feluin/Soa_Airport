@@ -16,4 +16,9 @@ public class RunwayClearedForTakeOffEvent extends AircraftEvent
     public RunwayDirection getRunwayDirection() {
         return runwayDirection;
     }
+
+    @Override
+    public String toString() {
+        return runwayDirection.name().toString();
+    }
 }
